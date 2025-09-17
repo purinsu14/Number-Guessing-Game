@@ -1,4 +1,4 @@
-**Number Guessing Game** 
+**Number Guessing Game**
 This is a simple number guessing game where you try to guess a number between 1 and 100. You can choose from three difficulty levels, each with a different number of chances. The game keeps track of your high scores and total playtime.
 
 **Features**
@@ -29,3 +29,4 @@ Project Idea :
 https://roadmap.sh/projects/number-guessing-game
 
 **Enjoy the game! 🎉**
+
