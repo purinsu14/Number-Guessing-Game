@@ -1,5 +1,5 @@
 **Number Guessing Game**
-This is a simple number guessing game where you try to guess a number between 1 and 100. You can choose from three difficulty levels, each with a different number of chances. The game keeps track of your high scores and total playtime.
+is a simple number guessing game where you try to guess a number between 1 and 100. You can choose from three difficulty levels, each with a different number of chances. The game keeps track of your high scores and total playtime.
 
 
 **Features**
@@ -18,10 +18,10 @@ This is a simple number guessing game where you try to guess a number between 1 
 6. Play Again: After each game, you'll be prompted to play again or exit. If you choose to exit, your stats will be displayed.
 
 
-**File Structure**
-your_script_name.py: The main Python script containing the game logic.
-playerdata.json: Stores all player information, including names, IDs, high scores, games played, and total playtime. This file is automatically created if it doesn't exist.
-readme.md: readme file
+**File Structure** :
+- your_script_name.py: The main Python script containing the game logic.
+- playerdata.json: Stores all player information, including names, IDs, high scores, games played, and total playtime. This file is automatically created if it doesn't exist.
+- readme.md: readme file
 
 
 **Getting Started**
@@ -35,5 +35,6 @@ https://roadmap.sh/projects/number-guessing-game
 
 
 **Enjoy the game! 🎉**
+
 
 
