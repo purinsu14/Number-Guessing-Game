@@ -19,7 +19,7 @@ class Config:
     } 
 
     starttext = "\nWelcome to the Number Guessing Game!\n" \
-    "I'm thinking of a number between 1 and 10.\n" \
+    "I'm thinking of a number between 1 and 100.\n" \
     "You have to guess the number. Easy right?\n"
     
     difftext = "\nPlease select the difficulty level:\n" \
@@ -36,7 +36,7 @@ class Config:
 class Game:
     def __init__(self, player): # game with object
         self.player = player
-        self.rng = random.randint(1, 10) # random number generator
+        self.rng = random.randint(1, 100) # random number generator
         self.chances = 0 
         self.diff = None 
         self.attempts = 0
@@ -45,7 +45,7 @@ class Game:
         self.won = False
 
     def rng_reset(self):
-        self.rng = random.randint(1, 10) # reset rng
+        self.rng = random.randint(1, 100) # reset rng
 
     def countdown(self):
         print("Game will start in 3") # countdown
