@@ -93,11 +93,12 @@ class Game:
                 print("Invalid input.") # handle non-integer input
                 continue
 
+            self.attempts += 1 ## add attempt count
+            self.chances -= 1 ## decrease chances
+
             if self.check_number(guess): #stop when number is correct
                 self.won = True
                 break
-            self.attempts += 1 ## add attempt count
-            self.chances -= 1 ## decrease chances
 
     def check_number(self, guess):
         if guess == self.rng: # check if guess is correct
@@ -111,10 +112,10 @@ class Game:
 
     def end_game(self):
         self.duration = round(time.time() - self.timer, 2) # calculate duration
-        self.player.highscore_update(self.diff, self.attempts + 1, self.duration, self.won) # update high score
+        self.player.highscore_update(self.diff, self.attempts, self.duration, self.won) # update high score
         if self.won: 
             print(f"\nCongratulations! You guessed the correct number!") # win message
-            print(f"Attempts: {self.attempts + 1}")
+            print(f"Attempts: {self.attempts}")
             print(f"Time: {self.duration}\n")
         else:
             print(f"\nYou've lost! The number was {self.rng}.") # lose message
@@ -149,9 +150,17 @@ class Player:
         with open(Config.task_path, 'r') as f:
             data = json.load(f) # load player data
         self.id = len(data["Players"]) # assign new ID
-        new_player = Config.player_data.copy() # create new player data
-        new_player["Id"] = self.id
-        new_player["Name"] = self.name 
+        new_player = {
+            "Id": self.id,
+            "Name": self.name,
+            "High Scores": {
+                "Easy": None,
+                "Medium": None,
+                "Hard": None
+            },
+            "Games Played": 0,
+            "Total Time Played": 0.0
+        } # create new player data
         data["Players"].append(new_player) # add new player to data
         with open(Config.task_path, 'w') as f:
             json.dump(data, f, indent=Config.json_indent) # save player data
